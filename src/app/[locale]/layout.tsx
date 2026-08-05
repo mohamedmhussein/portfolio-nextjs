@@ -8,7 +8,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContextMenu from "@/components/ContextMenu";
 import { siteConfig, siteUrl } from "@/lib/site";
-import { personJsonLd } from "@/lib/structured-data";
+import { personJsonLd, websiteJsonLd } from "@/lib/structured-data";
 import { dir, isLocale, locales, type Locale } from "@/lib/i18n";
 
 /**
@@ -43,7 +43,11 @@ export function generateMetadata({ params }: LayoutParams): Metadata {
     applicationName: siteConfig.name,
     authors: [{ name: siteConfig.name, url: siteConfig.url }],
     keywords: [
+      "Mohammad El Prince",
+      "Mohammad Elprince",
+      "elprince-dev",
       "AI Engineer",
+      "Agentic AI Engineer",
       "Software Engineer",
       "Backend Engineer",
       "AWS",
@@ -51,8 +55,12 @@ export function generateMetadata({ params }: LayoutParams): Metadata {
       "Serverless",
       "RAG",
       "LLM applications",
-      "Mohammad El Prince",
     ],
+    // Google Search Console ownership verification (set the token in the
+    // deployment env as NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION).
+    verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+      : undefined,
     alternates: {
       canonical: `/${locale}`,
       languages: { en: "/en", ar: "/ar" },
@@ -185,6 +193,11 @@ export default function RootLayout({
           type="application/ld+json"
           // Person structured data (Req 15.4).
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          // WebSite structured data — canonical site name for search results.
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <ThemeProvider
           enableSystem={true}
