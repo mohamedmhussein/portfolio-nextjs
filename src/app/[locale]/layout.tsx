@@ -6,6 +6,7 @@ import { Amiri, JetBrains_Mono, Philosopher } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ContextMenu from "@/components/ContextMenu";
 import { siteConfig, siteUrl } from "@/lib/site";
 import { personJsonLd } from "@/lib/structured-data";
 import { dir, isLocale, locales, type Locale } from "@/lib/i18n";
@@ -193,6 +194,7 @@ export default function RootLayout({
           <Navbar locale={locale} />
           {children}
           <Footer locale={locale} />
+          <ContextMenu locale={locale} />
         </ThemeProvider>
       </body>
     </html>

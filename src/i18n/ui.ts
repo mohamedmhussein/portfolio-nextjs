@@ -116,6 +116,18 @@ export interface UIDictionary {
   footer: {
     rights: string;
   };
+  contextMenu: {
+    connect: string;
+    downloadResume: string;
+    github: string;
+    linkedin: string;
+    sendEmail: string;
+    page: string;
+    scrollToTop: string;
+    goBack: string;
+    refresh: string;
+    menuLabel: string;
+  };
 }
 
 const en: UIDictionary = {
@@ -248,6 +260,18 @@ const en: UIDictionary = {
   footer: {
     rights: "Mohammad El Prince",
   },
+  contextMenu: {
+    connect: "Connect",
+    downloadResume: "Download Resume",
+    github: "GitHub",
+    linkedin: "LinkedIn",
+    sendEmail: "Send Email",
+    page: "Page",
+    scrollToTop: "Scroll to Top",
+    goBack: "Go Back",
+    refresh: "Refresh",
+    menuLabel: "Page actions",
+  },
 };
 
 const ar: UIDictionary = {
@@ -376,6 +400,18 @@ const ar: UIDictionary = {
   },
   footer: {
     rights: "محمد البرنس",
+  },
+  contextMenu: {
+    connect: "تواصل",
+    downloadResume: "تحميل السيرة الذاتية",
+    github: "GitHub",
+    linkedin: "LinkedIn",
+    sendEmail: "إرسال بريد",
+    page: "الصفحة",
+    scrollToTop: "الانتقال للأعلى",
+    goBack: "رجوع",
+    refresh: "تحديث",
+    menuLabel: "إجراءات الصفحة",
   },
 };
 
